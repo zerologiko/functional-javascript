@@ -14,8 +14,8 @@ function mapTestsToGradesRecursive(exams, average) {
     if (exams.length == 0) {
         return [];
     }
-    const head = exams[0];
-    const tail = exams.slice(1);
+    // ES6 destructuring -> same as head = exams[0]; tail = exams.slice(1) 
+    const [head, ...tail] = exams;
     return [head >= average ? 'PASS' : 'FAIL'].concat(
         mapTestsToGrades(tail, average)
     );

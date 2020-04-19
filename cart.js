@@ -29,6 +29,9 @@ console.log('Is also cart1 modified?: ', cart1);
 // The solution is DO NOT CHANGE OBJECTS in first place, or use cloning,
 // or using an immutability library to enforce it (immutable.js)
 // Use betterAddItem instead addItem and try again.
+// Notes: 
+// this cloning method cannot be used to clone methods of objects due to limitation of JSON format
+// also will not work on circular data structures. Bottomline, use an opensource well tested cloning
 let clone = (obj) => JSON.parse(JSON.stringify(obj));
 
 function betterAddItem(cart, item, price) {

@@ -1,6 +1,6 @@
 /**
  * Some functional basics with ES6 Javascript
- * function to create a new invoice focus on immutability
+ * function to create a new invoice focus on basic immutability
  * 
  */
 
