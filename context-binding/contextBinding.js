@@ -9,8 +9,8 @@
  function rectangleArea() {
     return this.height * this.witdh;
  }
-// this will be undefined beacause no this.height and this.witdh 
-// are in the context of the function
+// this will return obiouvsly undefined beacause no this.height and this.witdh 
+// are in the context of the function (and the function have no parameter)
  console.log('area unbind: ' + rectangleArea());
 
  const rectangle = {
