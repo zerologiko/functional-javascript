@@ -18,7 +18,7 @@ const formatCurrency = (symbol, decimalSeparator) => (value) => {
 };
 
 // 'peel' the first function, we have the second function in the currencyFormatter
-const currencyFormatter = formatCurrency(' €', ',');
+const currencyFormatter = formatCurrency('€', '.');
 console.log( currencyFormatter(1290) );
 console.log( currencyFormatter(0) );
 
@@ -39,3 +39,7 @@ let formattedCurrencies = [];
 currencies.forEach(
     e => formattedCurrencies.push(currencyFormatter(e))
 );
+// ...BUT can be improved using filter, map, reduce instead 
+// -> No side effects, no iterative loops 
+const goodWayFormattedCurrencies = currencies.map(currencyFormatter);
+console.log('formatted in a good way: ' + goodWayFormattedCurrencies);
