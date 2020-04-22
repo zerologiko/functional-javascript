@@ -1,2 +1,2 @@
 # functional-javascript
-Examples of differente functional programming concepts in ES6 Javascript.
+Examples of different functional programming concepts in ES6 Javascript.
