@@ -3,7 +3,6 @@
  * function that is side effetcs free. 
  * ...but you need to make sure that your callback functions have no side effects
  */
-
 const numbers = [1, 2, 3, 4, 5, 6];
 
 // Let's try reduce with a sum function 
