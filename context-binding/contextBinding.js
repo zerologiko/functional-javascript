@@ -27,6 +27,6 @@
 };
 
 const add5 = add.bind(null, 5);
-// So this will add (5, b) passing "b" param like 10 will call add(5, 10)
+// So this will add (a, 5) passing "a" param like 10 will call add(10, 5)
 // note that it is some sort of "partial application"
-add5(10);
+console.log(add5(10));
