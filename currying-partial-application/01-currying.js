@@ -72,3 +72,13 @@ const curriedFully =
     testScore =>
     testScore > average ? passGrade : failGrade;
 console.log('curriedFully passExam: ' + curriedFully('A')('F')(6)(7.5) ); 
+
+// Load the full build of Lodash and test the generic "curry" method implementation.
+var _ = require('lodash');
+const curriedByLodash = _.curry(uncurriedPassExam);
+console.log('curried by Lodash passExam: ' + curriedByLodash('A')('F')(6)(7.5) ); 
+const curriedPartiallyByLodash =curriedFully('A')('F')(6)
+console.log('curried partially by Lodash passExam: ' + curriedPartiallyByLodash(7.5) ); 
+
+
+// No custom implementation of currying yet... will see next.
