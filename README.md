@@ -15,6 +15,6 @@ ADVANCED:
 * Concepts: Categories, Functors and Monads in practice
 * Developing an application in "mostly" functional style
 
-ASYNC AND PROMISES:
-* Promieses
+PROMISES AND ASYNCHRONOUS FUNCTIONS:
+* Promises
 * Async-Await
