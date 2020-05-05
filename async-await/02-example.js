@@ -47,6 +47,9 @@ const populateBooks = async (user) => {
         renderBooks(secondTenBooks);
     }
 };
-// call it
-populateBooks('Mario');
+// Let's test.
+// note: also populateBooks(..) will return a default undefined promise because is async itself
+// so you can chain other "than" clauses after the execution if needed. 
+populateBooks('Mario').then(() => console.log('[THEN] All books rendered.'));
+
 
