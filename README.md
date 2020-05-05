@@ -1,5 +1,5 @@
 # Functional Javascript
-**Examples of different functional programming concepts in ES6 Javascript.**
+**Examples of different functional programming concepts in ES6+ Javascript.**
 
 BASICS:
 * ES6 functional language constructs
