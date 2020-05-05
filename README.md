@@ -3,6 +3,7 @@
 
 BASICS:
 * ES6 functional language constructs
+* Immutability
 * Higher order functions
 * Context binding
 * Map, reduce, filter
@@ -12,5 +13,8 @@ BASICS:
 
 ADVANCED:
 * Concepts: Categories, Functors and Monads in practice
-
 * Developing an application in "mostly" functional style
+
+ASYNC AND PROMISES:
+* Promieses
+* Async-Await
