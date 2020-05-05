@@ -60,4 +60,4 @@ console.log ( compose(compose(toString, plusOne), double)(10) );
 //    [1,2,3,4] and [2,4,9,16] are FUNCTORS 
 //    They take values from a container, morph them and put them in a different container
 //    So: a functor is a container that has a map function.
-//        Array in Javascript are functors because thei implements a map function and acts as container
+//        Array in Javascript are functors because they implements a map function and acts as container

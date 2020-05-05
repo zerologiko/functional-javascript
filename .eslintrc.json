@@ -3,6 +3,7 @@
     "env": {
         "browser": true,
         "node": true,
+        "ecmaVersion": 6,
         "es6": true
      }
  }

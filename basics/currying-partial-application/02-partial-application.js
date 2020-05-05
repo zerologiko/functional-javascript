@@ -10,6 +10,8 @@
  */
 
 // Using Lodash to compare partial evaluation vs currying
+// Note: Lodash was previousely imported with "npm" package manager 
+//       you can see it in the package.json. The command to import it: "npm install --save lodash"
 var _ = require('lodash');
 
 // Let's take a function to calculate volume with arity 3 (3 arguments).
