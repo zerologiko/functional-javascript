@@ -2,17 +2,28 @@
 
 A simple weather app built in "mosttly functional" style.
 
-Build:
+## Build:
 
-1. Make sure you have `webpack` installed (`npm install -g webpack`)
 2. Run `npm install` to install babel-loader and underscore
-3. Execute `webpack`
-4. View `index.html` in a browser
+3. Execute `npm run webpack:watch`
+4. View `index.html` in a browser serving in HTTP server
 
-Branches:
+## Serving the app in HTTP server:
 
-- `master`
-- `mocha-chai`: automated testing setup with Mocha, Chai, and Webpack. Place your tests in the `src` folder in `.test.js` files. Run your tests with the command `npm run test`. 
+**Option 1: Visual Studio Code**
+In Visual Studio Code use the "Go Live" function that start an HTTP server of the workspace folder
+
+**Option 2: Python HTTP server (easy on Linux and Mac)**
+Execute `python -m SimpleHTTPServer` in the root folder of the app this will start an HTTP server on `http://localhost:8000/`
+
+
+
+
+
+
+
+
+
 
 
 

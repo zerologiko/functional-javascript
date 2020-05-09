@@ -2,7 +2,7 @@ module.exports = {
     entry  : './src/main.js',
     output : {
         path     : __dirname,
-        filename : 'myaccount.dist.js'
+        filename : 'wheaterapp.dist.js'
     },
     module : {
         loaders: [ { 
@@ -10,10 +10,7 @@ module.exports = {
                 loader : 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: [
-                        'es2015',
-                        'stage-2'
-                    ]
+                    presets: ['@babel/preset-env']
                 }
             }
         ]
