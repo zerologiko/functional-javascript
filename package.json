@@ -2,7 +2,7 @@
   "name": "funtional_programming_js",
   "version": "1.0.0",
   "description": "",
-  "main": "invoice.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
