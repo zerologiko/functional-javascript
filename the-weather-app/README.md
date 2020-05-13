@@ -17,31 +17,26 @@ In Visual Studio Code use the "Go Live" function that start an HTTP server of th
 Execute `python -m SimpleHTTPServer` in the root folder of the app this will start an HTTP server on `http://localhost:8000/`
 
 
-
 ## API Used
 The app use https://api.openweathermap.org/ API, a free registration is required to get the API key.
+Also Google API key is required: a Google account is enough.
 
 Weather API
-https://api.openweathermap.org/data/2.5/weather?q=Bologna&appid=b3f94c758df03f4f532bad4bfe1e55b1&units=metric
+https://api.openweathermap.org/data/2.5/weather?q=CITY&appid=YOUR_APY_KEY&units=metric
+
+Example: https://api.openweathermap.org/data/2.5/weather?q=Bologna&appid=b3f94c758df03f4f532bad4bfe1e55b1&units=metric
 
 Forecast API
-https://api.openweathermap.org/data/2.5/forecast?q=Bologna&appid=b3f94c758df03f4f532bad4bfe1e55b1&units=metric&cnt=5
+https://api.openweathermap.org/data/2.5/forecast?q=CITY&appid=YOUR_API_KEY&units=metric&cnt=NUM_RESULT
+
+Example: https://api.openweathermap.org/data/2.5/forecast?q=Bologna&appid=b3f94c758df03f4f532bad4bfe1e55b1&units=metric&cnt=5
+
+Timezones API 
+To handle the tricky task of managing timezones http://api.geonames.org API are uese, free geristration.
+See http://www.geonames.org/export/web-services.html to register and enable an account (username is the apikey)
+Note: googleapis Timezone API can be used too but it needs a valid credit card to start free eavlution.
+
+Example: http://api.geonames.org/timezoneJSON?lat=47.01&lng=10.2&username=zerologiko
 
 
 
-
-
-
-
-
-
-
-API Used
-
-The app use https://api.openweathermap.org/ API, a free registration is required to get the API key.
-
-Weather API
-https://api.openweathermap.org/data/2.5/weather?q=Bologna&appid=b3f94c758df03f4f532bad4bfe1e55b1&units=metric
-
-Forecast API
-https://api.openweathermap.org/data/2.5/forecast?q=Bologna&appid=b3f94c758df03f4f532bad4bfe1e55b1&units=metric&cnt=5
