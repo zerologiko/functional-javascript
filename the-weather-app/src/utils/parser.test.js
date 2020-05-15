@@ -9,7 +9,7 @@ import {
     getTodaysTemperature,
     getSunriseSunset,
     getTodaysTemplate,
-    getForecatRow,
+    getForecastRow,
     getForecastTable
 } from './parser'
 
@@ -57,18 +57,21 @@ describe( 'Parser util tests', () => {
     });
 
     it('Should return sunrise and sunset time', () => {
-        const input =  {
+        const weather =  {
             sys: {
-                sunrise: 1589169069,
-                sunset: 1589221814
+                sunrise: 1589514396,
+                sunset: 1589567691
             }
         };
-        const output = 'Sunrise: 1589169069 Sunset: 1589221814';
-        expect( getSunriseSunset(input) ).to.equal(output);
+        const timezone = {
+            timezoneId: 'Europe/Vienna',
+        };
+        const output = 'Sunrise: 05:46 Sunset: 20:34';
+        expect( getSunriseSunset(weather, timezone) ).to.equal(output);
     });
 
     it('Should return todays today template', () => {
-        const input = {
+        const weather = {
             name: 'City', 
             weather: [
                 {
@@ -83,23 +86,77 @@ describe( 'Parser util tests', () => {
             },
             sys: {
                 country: 'COUNTRY_CODE',
-                sunrise: 1589169069,
-                sunset: 1589221814
+                sunrise: 1589514396,
+                sunset: 1589567691
             }
+        };
+        const timezone = {
+            timezoneId: 'Europe/Vienna',
         };
         const output = `<div>City, COUNTRY_CODE: Clouds (scattered clouds)</div>` +
             `<div>Temperature: 15 (min: 10 max: 25)</div>` +
-            `<div>Sunrise: 1589169069 Sunset: 1589221814</div>`;
-        expect( getTodaysTemplate(input) ).to.equal(output);
-
+            `<div>Sunrise: 05:46 Sunset: 20:34</div>`;
+        expect( getTodaysTemplate(weather, timezone) ).to.equal(output);
     });
 
-    xit('Should return todays forecast row', () => {
-
+    it('Should return todays forecast row', () => {
+        // Some simplified data from forecast API response
+        const weatherForecastResp = {
+            list: [
+                {
+                    dt: 1589533200,
+                    main: {temp: 20.49, temp_min: 20.49, temp_max: 21.79},
+                    weather: [{main: "Clouds", description: "few clouds"}]
+                },
+                {
+                    dt: 1589544000,
+                    main: {temp: 22.10, temp_min: 21.19, temp_max: 22.81},
+                    weather: [{main: "Rain", description: "light rain"}]
+                }
+            ]
+        };
+        const timezone = {
+            timezoneId: 'Europe/Vienna',
+        };
+        const firstRow = getForecastRow(weatherForecastResp, timezone)(0);
+        const secondRow = getForecastRow(weatherForecastResp, timezone)(1);
+        const expectedRow1 = `<tr> <td>May 15th</td> <td>20.49</td> <td>Clouds</td> <td>few clouds</td> </tr>`;
+        const expectedRow2 = `<tr> <td>May 15th</td> <td>22.1</td> <td>Rain</td> <td>light rain</td> </tr>`;
+        // you can make as many asertion you need
+        expect(firstRow).to.equal(expectedRow1);
+        expect(secondRow).to.equal(expectedRow2);
     });
 
-    xit('Should return todays forecast table', () => {
-
+    it('Should return todays forecast table', () => {
+         // Some simplified data from forecast API response
+         const weatherForecastResp = {
+            list: [
+                {
+                    dt: 1589533200,
+                    main: {temp: 20.49, temp_min: 20.49, temp_max: 21.79},
+                    weather: [{main: "Clouds", description: "few clouds"}]
+                },
+                {
+                    dt: 1589544000,
+                    main: {temp: 22.10, temp_min: 21.19, temp_max: 22.81},
+                    weather: [{main: "Rain", description: "light rain"}]
+                }
+            ]
+        };
+        const timezone = {
+            timezoneId: 'Europe/Vienna',
+        };
+        const tableResult = getForecastTable(weatherForecastResp, timezone)(0, 1);
+        // Now, check for "exact templates format" is not the best way, should be done checking the DOM
+        // This is just a simple solution to focus on TDD and functional programming, should be improved
+        const expectedResult = 
+            `<table>\n` +
+                `<tr> <th>Day</th> <th>Temp</th> <th>Weather</th> <th>description</th> </tr>\n` +
+                `<tr> <td>May 15th</td> <td>20.49</td> <td>Clouds</td> <td>few clouds</td> </tr>\n` +
+                `<tr> <td>May 15th</td> <td>22.1</td> <td>Rain</td> <td>light rain</td> </tr>\n` +
+            `</table>\n`;
+        
+        expect(tableResult).to.equal(expectedResult);
     });
 
 

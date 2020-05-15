@@ -1,8 +1,12 @@
 import {expect} from 'chai';
-import {WEATHER_API_KEY} from '../constants/const.js';
+import {
+    WEATHER_API_KEY,
+    GEONAMES_API_KEY
+} from '../constants/const.js';
 import {
     getParamString,
-    getOpenWeatherMapUrl
+    getOpenWeatherMapUrl,
+    getGeonamesUrl
 } from './endpoints';
 
 // Using TDD we want a function "getParamString" to handle 
@@ -30,14 +34,28 @@ describe('Endpoints', () => {
             key1: 'value1',
             key2: 'value2'
         };
+        const paramString = getParamString(params);
         // we imagine the function as a curried chain of functions 
         const url = getOpenWeatherMapUrl('endpoint')(params)('city');
-        const paramString = getParamString(params);
         const urlPrefix = 'https://api.openweathermap.org/data/2.5/';
         const result = `${urlPrefix}endpoint?q=city&appid=` + 
             `${WEATHER_API_KEY}${paramString}`;
 
         expect(url).to.equal(result);
     });
+
+    it('Should assemble the geonames URL with params', () => {
+        const latitude = 47.01;
+        const longitude = 10.2;
+        const endpoint = 'timezoneJSON'
+        // we imagine the function as a curried chain of functions 
+        const url = getGeonamesUrl(endpoint)(latitude, longitude);
+        const urlPrefix = 'http://api.geonames.org/';
+        const result = `${urlPrefix}timezoneJSON?lat=47.01&lng=10.2&username=` + 
+            `${GEONAMES_API_KEY}`;
+
+        expect(url).to.equal(result);
+    });
+    
 });
 

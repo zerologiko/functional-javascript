@@ -35,6 +35,7 @@ Timezones API
 To handle the tricky task of managing timezones http://api.geonames.org API are uese, free geristration.
 See http://www.geonames.org/export/web-services.html to register and enable an account (username is the apikey)
 Note: googleapis Timezone API can be used too but it needs a valid credit card to start free eavlution.
+See http://www.geonames.org/export/web-services.html#timezone
 
 Example: http://api.geonames.org/timezoneJSON?lat=47.01&lng=10.2&username=zerologiko
 

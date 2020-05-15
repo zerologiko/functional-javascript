@@ -1,4 +1,7 @@
-import { WEATHER_API_KEY } from '../constants/const.js';
+import { 
+    WEATHER_API_KEY,
+    GEONAMES_API_KEY
+ } from '../constants/const.js';
 /**
  * Given an object of parameters returns a query string
  * @param {*} params 
@@ -21,3 +24,9 @@ export const getOpenWeatherMapUrl =
     `${endpoint}?q=${city}&appid=${WEATHER_API_KEY}` + 
     getParamString(params);
 
+// build the geonames API URL useful to handle timezones
+export const getGeonamesUrl = 
+    endpoint =>
+    (latitude, longitude) =>
+    `http://api.geonames.org/${endpoint}` +
+    `?lat=${latitude}&lng=${longitude}&username=${GEONAMES_API_KEY}`;
