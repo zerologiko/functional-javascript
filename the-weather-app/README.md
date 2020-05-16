@@ -56,3 +56,4 @@ Example: http://api.geonames.org/timezoneJSON?lat=47.01&lng=10.2&username=zerolo
 * Webpack: resurce builder
 * Mocha and Chai: test execution and asserts
 * Axios: promise based ajax library to fetch API data
+* PureCSS: a super small CSS library (see https://purecss.io/)

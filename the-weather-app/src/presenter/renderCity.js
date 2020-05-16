@@ -11,11 +11,23 @@ import {
  */
 export const renderCity = ( {today, forecast, timezone} ) => {
 
+    // Get the DOM element to fill with templates
     const domElement = document.querySelector('.js-city-weather');
+    // get built templates
     const todayTemplate = getTodaysTemplate(today, timezone);
     const forecastTemplate = getForecastTable(forecast, timezone)(0, 4);
 
+    const upButton = '<button class="up-button js-up">Up</button>';
+    const downButton = '<button class="down-button js-down">Down</button>';
+
     // insert the template in the DOM 
-    domElement.innerHTML = `${todayTemplate} ${forecastTemplate}`;
+    domElement.innerHTML = `${todayTemplate} ${upButton} ${forecastTemplate} ${downButton}`;
+
+    const moveUp = () => console.log('up');
+    const moveDown = () => console.log('down');
+
+    document.querySelector('.js-up').addEventListener('click', moveUp);
+    document.querySelector('.js-up').addEventListener('click', moveDown);
+
 };
 
