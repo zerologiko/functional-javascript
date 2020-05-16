@@ -2,9 +2,18 @@
 
 A simple weather app built in "mosttly functional" style.
 
+Key points of the exercice:
+- avoid as mutch mutability (es. no vars only const)
+- try to limit side effects (es. just use when needed, like rendering templates)
+- keep in mind and exploit all the functional concepts (currying, partial application)
+- handle asynchronous call linearizing as mutch (es. use async-await properly)
+- when not funtional, OO is the second best:
+  - es. divide, modularize, single responsability, loosely coupling, high cohesion 
+
 ## Build
 
 2. Run `npm install` to install babel-loader and underscore
+2. Run `npm run test`to test the code (optional)
 3. Execute `npm run webpack:watch`
 4. View `index.html` in a browser serving in HTTP server
 
@@ -40,4 +49,10 @@ See http://www.geonames.org/export/web-services.html#timezone
 Example: http://api.geonames.org/timezoneJSON?lat=47.01&lng=10.2&username=zerologiko
 
 
-
+## Teck stack
+* npm: dependencypackage manager and task runner 
+* babel: transpiler for ES6 and new language futures compatibility
+  * https://babeljs.io/docs/en/next/babel-preset-env.html
+* Webpack: resurce builder
+* Mocha and Chai: test execution and asserts
+* Axios: promise based ajax library to fetch API data

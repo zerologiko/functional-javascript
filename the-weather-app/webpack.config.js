@@ -2,16 +2,23 @@ module.exports = {
     entry  : './src/main.js',
     output : {
         path     : __dirname,
-        filename : 'wheaterapp.dist.js'
+        filename : 'weatherapp.dist.js'
     },
+    
+    mode: 'development', // optimizations for 'development' environment change to 'production' to reduce dist size.
+    devtool: 'inline-source-map', // set to false to exclude sourcemap from dist file (smaller but no debugging) 
+    
     module : {
-        loaders: [ { 
-                test   : /.js$/,
-                loader : 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['@babel/preset-env']
+        rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /(node_modules|bower_components)/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-env']
                 }
+              }
             }
         ]
     }

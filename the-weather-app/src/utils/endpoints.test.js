@@ -7,7 +7,7 @@ import {
     getParamString,
     getOpenWeatherMapUrl,
     getGeonamesUrl
-} from './endpoints';
+} from './endpoints.js';
 
 // Using TDD we want a function "getParamString" to handle 
 // any number of parameters for our API endopoints
