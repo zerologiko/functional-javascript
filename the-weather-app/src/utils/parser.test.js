@@ -150,7 +150,7 @@ describe( 'Parser util tests', () => {
         // Now, check for "exact templates format" is not the best way, should be done checking the DOM
         // This is just a simple solution to focus on TDD and functional programming, should be improved
         const expectedResult = 
-            `<table>\n` +
+            `<table class="pure-table">\n` +
                 `<tr> <th>Day</th> <th>Temp</th> <th>Weather</th> <th>description</th> </tr>\n` +
                 `<tr> <td>May 15th</td> <td>20.49</td> <td>Clouds</td> <td>few clouds</td> </tr>\n` +
                 `<tr> <td>May 15th</td> <td>22.1</td> <td>Rain</td> <td>light rain</td> </tr>\n` +
