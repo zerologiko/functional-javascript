@@ -1,0 +1,5 @@
+/* Basic CSS to show how to import CSS from Webpack */
+div.panel {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

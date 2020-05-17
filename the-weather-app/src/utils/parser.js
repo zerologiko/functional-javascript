@@ -58,7 +58,7 @@ export const getForecastTable = (weather, timezone) =>
             const rowTemplate = getForecastRow(weather, timezone);
             const tableBody = getForcastTableBody( rowTemplate, firstRow, lastRow, '');
             // Templating can be imporved also
-            return `<table>\n` +
+            return `<table class="pure-table">\n` +
                         `<tr> <th>Day</th> <th>Temp</th> <th>Weather</th> <th>description</th> </tr>` +
                          `${tableBody}\n` +
                    `</table>\n`;
